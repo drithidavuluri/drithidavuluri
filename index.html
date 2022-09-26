@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Drithi</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/b8217846e6.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <img src="images/logo.png" class="logo">
+                    <ul id="sidemenu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                    </ul>
+                    <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+                </nav>
+                <div class="header-text">
+                    <p>Student</p>
+                    <h1>Hi! I am <span>Drithi Davuluri</span>,<br>a student at IIT Jodhpur</h1>
+                </div>
+            </div>
+        </div>
+        <!-------------------about---------------------->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                       <img src="images/user.jpg"> 
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About Me</h1>
+                        <br>
+                        <p>I'm Drithi Davuluri, currently a sophomore at Indian Institute of Technology, Jodhpur
+                            in the branch of Artificial Intelligence and Data Sciences. Due to my enthusiasm, 
+                            I typically adjust to new surroundings without much difficulty.
+                        </p>
+                        <br>
+                        <div class="tab-title">
+                            <p class="tab-links active-link" onclick="opentab('education')">Education</p>
+                            <p class="tab-links" onclick="opentab('hobbies')">Hobbies</p>
+                            <p class="tab-links" onclick="opentab('achievements')">Achievements</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="education">
+                            <ul>
+                                <li><span>Class VII - Class X</span><br>Boon School, Kakinada, Andhra Pradesh</li>
+                                <br>
+                                <li><span>Class XI - Class XII</span><br>Sri Chaitanya Junior College, Vijayawada, Andhra Pradesh</li>
+                                <br>
+                                <li><span>B.Tech</span><br>Indian Institute of Technology, Jodhpur</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="hobbies">
+                            <ul>
+                                <li><span>Playing Badminton</span><br>I have learned badminton for nearly 10 years and 
+                                    represented my district and state several times.</li>
+                                    
+                                <li><span>Travelling</span><br>I have been travelling to different parts of the country
+                                    and enjoy doing so. Knowing their culture, tradition and beliefs is something of my interest.</li>
+                                    
+                                <li><span>Reading news articles</span><br>I enjoy reading news articles and am enthusiastic
+                                    in knowing various things happening across the globe.</li>    
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="achievements">
+                            
+                                <li>Won district level Badminton tournaments and represented the district four times</li>
+                                <br>
+                                <li>Respresented state twice in South zone bandminton tournaments and once in National Badminton tournaments</li>
+                                <br>
+                                <li>Qualified for second level in Knowledge Assesment Test in Mathematics and Chemistry</li>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-----------------contact---------------->
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact Me</h1>
+                        <br>
+                        <p><i class="fa-solid fa-envelope"></i>drithidavuluri@gmail.com</p>
+                        <br>
+                        <p><i class="fa-solid fa-phone"></i>9110543575</p>
+                        <br>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/drithidavuluri/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/drithi-davuluri-712767227?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BhxYGoR%2F4Qj%2BTFjMJjdpFjw%3D%3D" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="contact-right">
+                        <form>
+                            <input type="text" name="Name" placeholder="Your Name" required>
+                            <input type="email" name="Email" placeholder="Your Email" required>
+                            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                            <button type="submit" class="btn btn2">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright <i class="fa-regular fa-copyright"></i> Drithi </p>
+            </div>
+        </div>
+
+
+
+        <script>
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+
+            function opentab(tabname){
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-link");
+                }
+                for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+        </script>
+        <script>
+            var sidemenu = document.getElementById("sidemenu");
+            function openmenu(){
+                sidemenu.style.right = "0";
+            }
+            function closemenu(){
+                sidemenu.style.right= "-200px";
+            }
+        </script>
+
+
+    </body> 
+</html>
